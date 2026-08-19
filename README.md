@@ -1,101 +1,56 @@
-# Prabika Rai — Portfolio (MERN Stack)
+# Hi, I'm Prabika Rai 👋
 
-A full MERN (MongoDB, Express, React, Node) portfolio site, styled to match a
-clean, minimal, code-themed reference design: a thin dark top bar, a
-`< Name />` logo, uppercase navigation, and a single scrolling page with five
-sections — Home, Experience & Education, Projects & Publications, About, and
-Contact — all backed by a database instead of hardcoded content.
+Software Engineering student specializing in Quality Assurance, based in Nepal.
 
-The nav links are anchors (`#home`, `#experience`, `#projects`, `#about`,
-`#contact`) that smooth-scroll to each section, and the active nav item
-underlines itself automatically as you scroll past that section.
+> I build quality solutions and ensure they work flawlessly through rigorous testing.
 
-```
-portfolio-mern/
-├── server/          Express + MongoDB API
-│   ├── config/db.js       Mongo connection
-│   ├── models/             Mongoose schemas (Profile, Project, Message)
-│   ├── routes/              /api/profile, /api/projects, /api/contact
-│   ├── seed.js               Seeds the DB with sample content
-│   └── server.js              App entry point
-└── client/          React (Vite) + Tailwind CSS frontend
-    └── src/
-        ├── components/       Navbar, Footer, DecoDots, BrandIcons
-        ├── pages/              Section components stacked on one page:
-        │                       Home, ExperienceEducation, ProjectsPublications,
-        │                       About, Contact
-        ├── api/client.js       Axios wrapper around the API
-        └── data/fallback.js    Local fallback content if the API is unreachable
-```
+## About Me
 
-## Sections (in scroll order)
+I'm a Software Engineering student with a passion for Quality Assurance and frontend development. I focus on building user-friendly interfaces and ensuring software quality through comprehensive testing. I work with React and Node.js on the frontend, and I specialize in manual, API, and SQL-based testing to ensure software reliability and quality.
 
-- **Home** (`#home`) — portrait + name + role + greeting chip + short bio +
-  social links, followed by "Hello, world!" and "Lately" sections.
-- **Experience & Education** (`#experience`) — two-column timelines (green
-  dot markers) plus Certifications & Hackathons / Volunteering & Leadership
-  checklists (green checkmarks).
-- **Projects & Publications** (`#projects`) — a horizontally scrolling
-  project carousel with prev/next arrows, pulling live from `/api/projects`.
-- **About** (`#about`) — full bio plus a skills grid.
-- **Contact** (`#contact`) — "Connect with Me" layout with a working form
-  that POSTs to `/api/contact` and is stored in MongoDB.
+Right now, I'm deepening my QA expertise through hands-on testing projects and learning different testing methodologies — I'm passionate about finding bugs before users do and making sure quality is never compromised. I'm always looking for opportunities to grow as a QA professional and contribute to building reliable, high-quality software.
 
-## 1. Prerequisites
+- 🎓 **B.Sc. (Hons) Software Engineering** — Patan College Professional Studies (PCPS), University of Bedfordshire (2025–2028)
+- 🔍 Coursework: Data Structures, Databases, Software Testing, Web Development, Quality Assurance
+- 💻 Currently: QA & Frontend Developer on hands-on projects and hackathons
 
-- Node.js 18+
-- A MongoDB connection — either a local `mongod` instance or a free
-  [MongoDB Atlas](https://www.mongodb.com/atlas) cluster.
+## Skills
 
-## 2. Backend setup
+| Area | Tools |
+|------|-------|
+| Frontend | React, JavaScript, HTML, CSS |
+| Backend | Node.js |
+| QA & Testing | Manual Testing, API Testing, SQL Testing |
+| Tools | Postman, Git, VS Code |
 
-```bash
-cd server
-cp .env.example .env      # then edit MONGO_URI if you're using Atlas
-npm install
-npm run seed               # populates Profile + 3 sample Projects
-npm run dev                 # starts on http://localhost:5000
-```
+## Featured Projects
 
-API endpoints:
+- **[Daily Fitness Tracker System](https://github.com/Prabika524/DailyFitnessTracker)** — A full-stack fitness management system with comprehensive testing for users, trainers & admins to track workouts, progress, and daily activities. *(Testing, QA, Backend, PostgreSQL)*
+- **[Dental Management System](https://github.com/Prabika524/DentalManagementSystem)** — A comprehensive management system for dental clinic operations, with end-to-end designed and tested workflows for patients, dentists, receptionists, and appointments. *(Java, JavaFX, MySQL, Testing)*
+- **[Nepal Heritage](https://mid-valley-hackathon.vercel.app/)** — A full-stack ticketing and discovery platform for Nepal's heritage sites and trekking routes, with a booking system for travelers and an admin portal for managing sites, tours, and bookings. *(React, TypeScript, Express, Tailwind CSS, AI Chatbot)*
 
-| Method | Route                | Description                     |
-|--------|-----------------------|----------------------------------|
-| GET    | `/api/profile`        | Hero/about content + skills      |
-| PUT    | `/api/profile`        | Update the profile               |
-| GET    | `/api/projects`        | List projects (`?featured=true`) |
-| POST   | `/api/projects`        | Create a project                 |
-| PUT    | `/api/projects/:id`    | Update a project                 |
-| DELETE | `/api/projects/:id`    | Delete a project                 |
-| POST   | `/api/contact`         | Submit the contact form          |
-| GET    | `/api/contact`         | List submitted messages          |
+## Hackathons
 
-## 3. Frontend setup
+- **Orchid HackX 2026** — Orchid International College (July 10–12, 2026)
+  Participated in a 48-hour hackathon, building *MediShield* — a hospital data security and insider threat detection platform featuring anomaly detection, device-level logging, and admin dashboard controls.
 
-```bash
-cd client
-cp .env.example .env      # points VITE_API_URL at the backend, defaults to :5000
-npm install
-npm run dev                 # starts on http://localhost:5173
-```
+## Volunteering
 
-Open `http://localhost:5173`. The page fetches your profile and projects from
-the API; if the API isn't running yet it falls back to the sample content so
-the UI is never empty while you're setting things up.
+- **Volunteer, NYEF Kathmandu Summit** — Nepalese Young Entrepreneurs' Forum (NYEF), Marriott Hotel, Kathmandu (April 2026)
+  Supported event activities and coordination for a smooth participant experience, built professional networks with entrepreneurs and international delegates, and developed skills in communication, networking, and event coordination.
 
-## 4. Customizing content
+## Certifications
 
-Everything shown on the page — name, role, bio, skills, resume link, socials,
-and the three project cards — lives in MongoDB. Edit it either by:
+- Data Science Essentials with Python — Cisco Networking Academy (16 Aug 2026)
+- CCNA: Introduction to Networks — Cisco Networking Academy, via University of Bedfordshire
+- Orchid HackX 2026 – Certificate of Participation, Orchid International College
 
-- Re-running `npm run seed` after editing `server/seed.js`, or
-- Calling the API directly (e.g. `PUT /api/profile`, `POST /api/projects`)
-  from a tool like Postman or `curl`.
+## Connect with Me
 
-## 5. Production build
+- 💻 GitHub: [github.com/Prabika524](https://github.com/Prabika524)
+- 💼 LinkedIn: [linkedin.com/in/prabika-rai-b49061377](https://www.linkedin.com/in/prabika-rai-b49061377/)
+- 📧 Email: [raiprabika34@gmail.com](mailto:raiprabika34@gmail.com)
 
-```bash
-cd client && npm run build   # outputs static files to client/dist
-cd server && npm start        # serve the API (add a static file server or
-                                # deploy client/dist to a CDN/host of your choice)
-```
+---
+
+*This repository hosts the source code for my personal portfolio website, built with the MERN stack.*
