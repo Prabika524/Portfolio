@@ -1,3 +1,5 @@
+import heroImage from "../assets/hero.png";
+
 export const fallbackProfile = {
   name: "Prabika Rai",
   role: "Software Engineering Student specializing in Quality Assurance",
@@ -62,7 +64,7 @@ export const fallbackProfile = {
     linkedin: "https://www.linkedin.com/in/prabika-rai-b49061377/",
     email: "mailto:raiprabika34@gmail.com",
   },
-  heroImage: "/src/assets/hero.png",
+  heroImage,
 };
 
 export const fallbackProjects = [
