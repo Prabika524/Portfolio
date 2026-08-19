@@ -1,0 +1,8 @@
+# Jekyll config to exclude large dependency folders from processing
+exclude:
+  - "server/node_modules"
+  - "client/node_modules"
+  - "server/**/*.md"
+  - "client/**/*.md"
+# Prevent GitHub Pages from processing with custom plugins
+theme: null
